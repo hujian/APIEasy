@@ -1,0 +1,21 @@
+//  <%= @model_name %>.m
+//
+//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
+//  Copyright 2012 theotino. All rights reserved.
+
+#import "<%= @model_name -%>.h"
+
+@implementation <%= @model_name %>
+
+<% @properties.each do |property| -%>
+@synthesize <%= property[:name] -%>;
+<% end -%>
+
+- (void)dealloc {
+<% @nilable_properties.each do |property| -%>
+  self.<%= property[:name] -%> = nil;
+<% end -%>
+  [super dealloc];
+}
+
+@end

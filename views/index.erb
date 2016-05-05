@@ -1,0 +1,48 @@
+<!-- sub header -->
+<header class="subhead homepage-subhead">
+	<div class="container">
+		<div class="subhead-content">
+			<img src="img/logo.png" alt="">
+			<h1>UliAPI</h1>
+			<p class="lead">API管理工具</p>
+		</div>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<div class="row">
+    	<a href="/project/create" class="btn" style="margin-top:20px">新增项目</a>
+	</div>
+	<% if @projects != nil %>
+		<% @projects.each do |project| %>
+			<div class="row border-table-row">
+				<div class="span2 project-preview">
+					<a href="/project/<%= project.id %>">
+		    			<img src="/img/project.png" class="img-polaroid" alt="">
+					</a>
+				</div>
+				<div class="span6 project-info">
+					<p><span class="lead"><%= project.name %></span>
+						<a href="/project/<%= project.id %>" class=""><i class="icon-check"></i>查看</a>
+						<a href="/project/<%= project.id %>/edit" class=""><i class="icon-edit"></i>编辑</a>
+					</p>
+					<p class="project-subinfo"><i class="icon-time"></i>创建时间: <%= project.created_at.strftime("%Y-%m-%d") %></p>
+					<p class="project-subinfo"><i class="icon-eye-open"></i>项目状态: <%= project.status %></p>
+					<p class="project-subinfo">
+						<i class="icon-tag"></i>
+						<% if project.interfaces.empty? %>
+							暂无接口
+						<% else %>
+							现有接口: <a href="/project/<%= project.id %>/interface/all"><%= project.interfaces.length %></a> 
+						<% end %>
+					</p>
+				</div>
+				<div class="span2" style="margin-top:140px">
+					
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+
+</div> <!-- body container -->

@@ -1,0 +1,471 @@
+# Logfile created on 2012-11-30 10:58:29 +0800 by logger.rb/31641
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 02:58:27 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=f849d3e7ef78d0d4c69621bd8fc3089f; path=/, PHPSESSID=13f725310c0d6c5292c9b2d76fdaeef8; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=f849d3e7ef78d0d4c69621bd8fc3089f
+saved cookie: PHPSESSID=13f725310c0d6c5292c9b2d76fdaeef8
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mechanize/2.5.1 Ruby/1.9.3p125 (http://github.com/tenderlove/mechanize/)
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:00:09 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=cf5e8901f4131d530c7d28b1f53dde8e; path=/, PHPSESSID=9afcdb2df708e924654a837d24d72120; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=cf5e8901f4131d530c7d28b1f53dde8e
+saved cookie: PHPSESSID=9afcdb2df708e924654a837d24d72120
+Net::HTTP::Get: /
+request-header: accept => */*
+request-header: user-agent => Mechanize/2.5.1 Ruby/1.9.3p125 (http://github.com/tenderlove/mechanize/)
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => www.163.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: expires => Fri, 30 Nov 2012 03:01:59 GMT
+response-header: date => Fri, 30 Nov 2012 03:00:39 GMT
+response-header: server => nginx
+response-header: content-type => text/html; charset=GBK
+response-header: transfer-encoding => chunked
+response-header: vary => Accept-Encoding,User-Agent,Accept
+response-header: cache-control => max-age=80
+response-header: content-encoding => gzip
+response-header: x-via => 1.1 stsz72:8107 (Cdn Cache Server V2.0), 1.1 zjfy75:30000 (Cdn Cache Server V2.0)
+response-header: connection => keep-alive
+Read 10 bytes (10 total)
+Read 1044 bytes (1054 total)
+Read 1448 bytes (2502 total)
+Read 1448 bytes (3950 total)
+Read 2896 bytes (6846 total)
+Read 1448 bytes (8294 total)
+Read 2896 bytes (11190 total)
+Read 1448 bytes (12638 total)
+Read 1448 bytes (14086 total)
+Read 1448 bytes (15534 total)
+Read 1448 bytes (16982 total)
+Read 1448 bytes (18430 total)
+Read 1448 bytes (19878 total)
+Read 1448 bytes (21326 total)
+Read 1448 bytes (22774 total)
+Read 1448 bytes (24222 total)
+Read 364 bytes (24586 total)
+Read 1076 bytes (25662 total)
+Read 1448 bytes (27110 total)
+Read 1448 bytes (28558 total)
+Read 1448 bytes (30006 total)
+Read 1448 bytes (31454 total)
+Read 1448 bytes (32902 total)
+Read 1448 bytes (34350 total)
+Read 1448 bytes (35798 total)
+Read 1448 bytes (37246 total)
+Read 1448 bytes (38694 total)
+Read 1448 bytes (40142 total)
+Read 1448 bytes (41590 total)
+Read 1448 bytes (43038 total)
+Read 2896 bytes (45934 total)
+Read 1448 bytes (47382 total)
+Read 1448 bytes (48830 total)
+Read 332 bytes (49162 total)
+Read 1108 bytes (50270 total)
+Read 1448 bytes (51718 total)
+Read 1448 bytes (53166 total)
+Read 1448 bytes (54614 total)
+Read 1448 bytes (56062 total)
+Read 1448 bytes (57510 total)
+Read 1448 bytes (58958 total)
+Read 1448 bytes (60406 total)
+Read 1448 bytes (61854 total)
+Read 1448 bytes (63302 total)
+Read 1448 bytes (64750 total)
+Read 1448 bytes (66198 total)
+Read 1448 bytes (67646 total)
+Read 1448 bytes (69094 total)
+Read 1448 bytes (70542 total)
+Read 1448 bytes (71990 total)
+Read 1448 bytes (73438 total)
+Read 300 bytes (73738 total)
+Read 1140 bytes (74878 total)
+Read 1448 bytes (76326 total)
+Read 1448 bytes (77774 total)
+Read 1448 bytes (79222 total)
+Read 1448 bytes (80670 total)
+Read 1448 bytes (82118 total)
+Read 1448 bytes (83566 total)
+Read 1448 bytes (85014 total)
+Read 2896 bytes (87910 total)
+Read 1448 bytes (89358 total)
+Read 1448 bytes (90806 total)
+Read 1448 bytes (92254 total)
+Read 1448 bytes (93702 total)
+Read 1448 bytes (95150 total)
+Read 1448 bytes (96598 total)
+Read 1448 bytes (98046 total)
+Read 268 bytes (98314 total)
+Read 1172 bytes (99486 total)
+Read 1448 bytes (100934 total)
+Read 10359 bytes (111293 total)
+gzip response
+Net::HTTP::Get: /api/user/profile?username=1@1.com&PHPSESSID=7169f2dd328953e1b1d8e64
+request-header: accept => */*
+request-header: user-agent => Mechanize/2.5.1 Ruby/1.9.3p125 (http://github.com/tenderlove/mechanize/)
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:01:01 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=7169f2dd328953e1b1d8e64; path=/, PHPSESSID=34e2b732077bf8487686ed1c36fb8d7f; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+saved cookie: PHPSESSID=7169f2dd328953e1b1d8e64
+saved cookie: PHPSESSID=34e2b732077bf8487686ed1c36fb8d7f
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:01:37 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=848172761448604efb12738459eaa49b; path=/, PHPSESSID=34b6d321710eaa41a44bb6ee0289606e; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 167 bytes (167 total)
+gzip response
+saved cookie: PHPSESSID=848172761448604efb12738459eaa49b
+saved cookie: PHPSESSID=34b6d321710eaa41a44bb6ee0289606e
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:01:45 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=1537f400016fc4023bede01baf798fca; path=/, PHPSESSID=ebb99e6ec4f8c15260ff996aa0fb5f3c; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=1537f400016fc4023bede01baf798fca
+saved cookie: PHPSESSID=ebb99e6ec4f8c15260ff996aa0fb5f3c
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:03:12 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=623673c99328dcb5497566f0bd87e66e; path=/, PHPSESSID=3de19db00c574d4b8dbc286614ac043a; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=623673c99328dcb5497566f0bd87e66e
+saved cookie: PHPSESSID=3de19db00c574d4b8dbc286614ac043a
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:03:25 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=9a32e140f4bc141786ab4fdf759810ac; path=/, PHPSESSID=ae91097ca4672af3063841428201b42a; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=9a32e140f4bc141786ab4fdf759810ac
+saved cookie: PHPSESSID=ae91097ca4672af3063841428201b42a
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:03:58 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=db3d5524876094701dc04b448b071b5e; path=/, PHPSESSID=e9dade7d797e05a3a1433d5f832dff3f; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 167 bytes (167 total)
+gzip response
+saved cookie: PHPSESSID=db3d5524876094701dc04b448b071b5e
+saved cookie: PHPSESSID=e9dade7d797e05a3a1433d5f832dff3f
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:05:47 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=cb5ec7fe62d0555e7a52181b1384c433; path=/, PHPSESSID=6488d6e405d692c10f3677eecc6b7cb7; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 168 bytes (168 total)
+gzip response
+saved cookie: PHPSESSID=cb5ec7fe62d0555e7a52181b1384c433
+saved cookie: PHPSESSID=6488d6e405d692c10f3677eecc6b7cb7
+Net::HTTP::Get: /api/user/profile?channelId=1&username=1@1.com&PHPSESSID=d432c41cd73b24333e074a4ce7b5244b&sign=06807beea22e21b58e8ebf66b84a80ba&deviceType=iPhone&version=1.0
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=6488d6e405d692c10f3677eecc6b7cb7
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:06:17 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=d432c41cd73b24333e074a4ce7b5244b; path=/, PHPSESSID=ecbefc8f464c7870549d13813cc803a7; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+saved cookie: PHPSESSID=d432c41cd73b24333e074a4ce7b5244b
+saved cookie: PHPSESSID=ecbefc8f464c7870549d13813cc803a7
+Net::HTTP::Get: /api/user/profile?username=1@1.com&PHPSESSID=7169f2dd328953e1b1d8e649e2173f98&sign=7771d516cbf285ae498bf80aac119659&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=ecbefc8f464c7870549d13813cc803a7
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:07:32 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=7169f2dd328953e1b1d8e649e2173f98; path=/, PHPSESSID=8cb6e23589e0c4c2a52c1090fe181a74; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+saved cookie: PHPSESSID=7169f2dd328953e1b1d8e649e2173f98
+saved cookie: PHPSESSID=8cb6e23589e0c4c2a52c1090fe181a74
+Net::HTTP::Get: /api/user/login?username=1@1.com&password=123456&sign=e7b14c2e8f1061689a4161a04992eb10&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=8cb6e23589e0c4c2a52c1090fe181a74
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:07:41 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 167 bytes (167 total)
+gzip response
+Net::HTTP::Get: /api/user/profile?username=1@1.com&PHPSESSID=7169f2dd328953e1b1d8e649e2173f98&sign=7771d516cbf285ae498bf80aac119659&deviceType=iPhone&version=1.0&channelId=1
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=8cb6e23589e0c4c2a52c1090fe181a74
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:07:48 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: set-cookie => PHPSESSID=7169f2dd328953e1b1d8e649e2173f98; path=/, PHPSESSID=3a516a0aae345713dcb6b705a30861cf; path=/
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+saved cookie: PHPSESSID=7169f2dd328953e1b1d8e649e2173f98
+saved cookie: PHPSESSID=3a516a0aae345713dcb6b705a30861cf
+Net::HTTP::Get: /api/user/profile?username=1@1.com&deviceType=iPhone&version=1.0&channelId=1&sign=c362713466e29307438faa2161ca3e10
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=3a516a0aae345713dcb6b705a30861cf
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:08:02 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+Net::HTTP::Get: /api/user/profile?username=1@1.com&deviceType=iPhone&version=1.0&channelId=1&sign=c362713466e29307438faa2161ca3e10
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:16.0) Gecko/20100101 Firefox/16.0
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=3a516a0aae345713dcb6b705a30861cf
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:08:04 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => keep-alive
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response
+Net::HTTP::Get: /api/user/profile?username=1@1.com&deviceType=iPhone&version=1.0&channelId=1&sign=c362713466e29307438faa2161ca3e10
+request-header: accept => */*
+request-header: user-agent => Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16
+request-header: accept-encoding => gzip,deflate,identity
+request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+request-header: accept-language => en-us,en;q=0.5
+request-header: cookie => PHPSESSID=3a516a0aae345713dcb6b705a30861cf
+request-header: host => mtest.jiuxian.com
+status: Net::HTTPOK 1.1 200 OK
+response-header: server => nginx
+response-header: date => Fri, 30 Nov 2012 03:08:10 GMT
+response-header: content-type => text/html
+response-header: transfer-encoding => chunked
+response-header: connection => close
+response-header: vary => Accept-Encoding
+response-header: x-powered-by => PHP/5.3.12
+response-header: expires => Thu, 19 Nov 1981 08:52:00 GMT
+response-header: cache-control => no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+response-header: pragma => no-cache
+response-header: content-encoding => gzip
+Read 54 bytes (54 total)
+gzip response

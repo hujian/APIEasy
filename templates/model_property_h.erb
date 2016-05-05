@@ -1,0 +1,17 @@
+//  <%= @model_name %>.h
+//
+//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
+//  Copyright 2012 theotino. All rights reserved.
+
+#import "TNDataModel.h"
+<% @import_properties.each do |property| -%>
+#import "<%= property %>.h"
+<% end -%>
+
+@interface <%= @model_name %>: TNDataModel
+
+<% @properties.each do |property| -%>
+@property (nonatomic, <%= property[:memory_type] %>) <%= property[:type] %> <%= property[:name] -%>;
+<% end -%>
+
+@end

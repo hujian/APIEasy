@@ -1,0 +1,164 @@
+<div class="container">
+
+	<!-- 输入内容 -->
+	<div class="tool-div">
+		<!-- 选择菜单 -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#test_default" data-toggle="tab">默认测试</a></li>
+			<li><a href="#test_custom" data-toggle="tab">自定义测试</a></li>
+		</ul>	
+
+	    <div id="myTabContent" class="tab-content">
+	    	<!-- 默认测试 -->
+			<div id="test_default" class="tab-pane fade in active">
+				<p> <i class="icon-globe"></i>URL:</p>
+				<div>
+					<input type="text" style="margin-top:9px" class="input-xxlarge", name="success_test_url"> 
+					<a class="btn btn-info" href="#get_data">提交</a>
+				</div>
+			</div>
+
+			<!-- 自定义测试 -->
+			<div id="test_custom" class="tab-pane fade">
+				<p><i class="icon-globe"></i>URL:</p>
+				<div>
+					<input type="text" style="margin-top:9px" class="input-xxlarge", name="success_test_url"> 
+					<a class="btn" id="parse_url_params_button">解析参数</a>
+					<a href="#refresh_url" class="btn">更新URL</a>
+					<a class="btn btn-info" href="#get_data">提交</a>
+				</div>
+				<table class="table" id="input_params_table">
+					<thead>
+						<tr>
+							<td>参数名称</td>
+							<td>输入值实例</td>
+							<td>说明</td>
+							<td>类型</td>
+							<td>
+								<a class="add_input_param_button"><i class="icon-plus"></i></a>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" placeholder="必填" name="input_name[]"></td>
+							<td><input type="text" placeholder="选填" name="input_sample[]"></td>
+							<td><input type="text" placeholder="选填" name="input_detail[]"></td>
+							<td>string</td>
+							<td>
+								<a class="delete_param_button"><i class="icon-minus"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="#make_md5" class="btn">生成MD5签名</a>
+			</div>
+	  	</div>
+	</div>
+
+	<!-- 返回结果 -->
+	<div class="tool-div" id="output">
+		<i class="icon-ok"></i>返回结果:
+		<div class="btn-group">
+			<a class="btn data-switcher" href="#format">格式数据</a>
+			<a class="btn data-switcher" href="#origin">原始数据</a>
+			<a class="btn data-switcher" href="#clear">清除数据</a>
+		</div>
+		<pre id="test_result" class="code-pre"></pre>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		function removeSwitcherStatus() {
+			$("a.data-switcher").each (function() {
+				$(this).removeClass("active");
+			});
+		}
+
+		function fillOutput(data) {
+			$("#test_result").html(jsl.format.formatJson(data))
+			removeSwitcherStatus();
+			$("a[href=#format]").addClass("active")
+		}
+
+		$("a[href=#get_data]").click(function() {
+			var input = $(this).prevAll("input");
+			var url = input.val()
+			$.get(("/interface/refresh"), {"url":url}, function(data, status) {
+				fillOutput(data)
+			});
+		})
+
+		$("#parse_url_params_button").click(function() {
+			var input = $(this).prev("input");
+			var url = input.val()
+
+			params = paramsFromURL(url);
+			if (Object.size(params) > 0) {
+				var table = $("#input_params_table");
+				// remove old params
+				table.find("tbody tr").each(function() {
+					$(this).remove();
+				})
+				// add new ones
+				for (name in params) {
+					var row = addTableRow(table, getInputParamRowString);
+					row.find("td:first input").val(name);
+					row.find("td:eq(1) input").val(params[name]);
+				}
+			}
+		})
+
+		$("a[href=#refresh_url]").click(function() {
+			var input = $(this).prevAll("input");
+			var url = input.val();
+			var location = locationFromURL(url);
+			var new_url = "http://" + location.hostname + location.pathname;
+
+			var params = paramsFromParamTable($("table#input_params_table tbody tr"));
+			var paramsStr = paramsStringFromHash(params)
+			if(paramsStr != "") {
+				new_url = new_url + "?" + paramsStr;
+			}
+			input.val(new_url);
+		})
+
+		$("a[href=#make_md5]").click(function() {
+			var table = $("#input_params_table");
+			var params = paramsFromParamTable($("table#input_params_table tbody tr"));
+			var row = addTableRow(table, getInputParamRowString);
+			row.find("td:first input").val("sign");
+			row.find("td:eq(1) input").val(md5ParamStringFromHash(params));
+		})
+
+		$("table td a").click(function() {
+			if ($(this).hasClass("delete_param_button")) {
+				var row = $(this).parents("tr")
+				row.remove();
+			} else {
+				var table = $(this).parents("table")
+				addTableRow(table, getInputParamRowString);
+			}
+		})
+
+		$(".data-switcher").click(function() {
+			removeSwitcherStatus();
+			var pre = $("#test_result")
+			switch($(this).attr("href")) {
+				case "#format":
+					pre.html(jsl.format.formatJson(pre.html()))
+					break;
+				case "#origin":
+					pre.html(deformatJson(pre.html()))
+					break;
+				case "#clear":
+					pre.html("")
+					break;
+			};
+			$(this).addClass("active");
+		})
+
+
+	})
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>接口详情</title>
+		<meta name="description" content="">
+	    <meta name="author" content="">
+
+		<link rel="stylesheet" href="../public/css/bootstrap.css">
+		<link rel="stylesheet" href="../public/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="../public/css/global.css">
+	</head>
+
+	<body>
+		<!-- navi bar
+		==================================================== -->
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+		        <a class="brand" href="#">UliAPI</a>
+	            <ul class="nav">
+		            <li><a href="./index.html">首页</a></li>
+		            <li><a href="./project.html">测试项目1</a></li>
+		            <li><a href="./interface.html">接口列表</a></li>
+		            <li class="active"><a href="#">接口在线测试</a></li>
+	            </ul>
+	        </div>
+	      </div>
+	    </div>
+
+		<!-- sub header -->
+		<header class="subhead">
+			<div class="container">
+				<h1>测试项目1</h1>
+				<p class="lead">这个工程就是随便一个工程</p>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="page-header">
+				<a href="./index.html">返回</a>
+			</div>
+
+			<!-- 接口信息 -->
+			<p class="lead">接口描述</p>
+			<table class="table table-bordered table-striped center-header">
+				<tbody>
+					<tr>
+						<td>接口地址</td>
+						<td>http://221.224.162.180:8080/Json/</td>
+					</tr>
+					<tr>
+						<td>伪数据地址</td>
+						<td>http://10.122.81.238:4567/Json/</td>
+					</tr>
+					<tr>
+						<td>接口类型</td>
+						<td>GET</td>
+					</tr>
+					<tr>
+						<td>接口说明</td>
+						<td>随便一个接口</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- 输入参数设置 -->
+			<p class="lead">输入参数</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<td>参数名称</td>
+						<td>参数类型</td>
+						<td>输入值</td>
+						<td>说明</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>userName</td>
+						<td>string</td>
+						<td><input type="text" value="hj"></td>
+						<td>用户名</td>
+					</tr>
+					<tr>
+						<td>password</td>
+						<td>string</td>
+						<td><input type="text" value="hj"></td>
+						<td>密码</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div style="width:50%">
+			<a href="#getFake" class="btn">获取正式数据</a>
+			<a href="#getFake" class="btn btn-primary">获取测试数据</a>
+			<a href="#getFake" class="btn btn-info">获取伪数据</a>
+				<textarea name="" id="" cols="30" rows="10" class="auto-width-text-area">text</textarea>
+			</div>
+		</div>
+
+	    <footer class="footer">
+	      <div class="container">
+	        <p class="pull-right"><a href="#">回到顶部</a></p>
+	        <p>致力于移动互联网项目的API管理 create by <a href="mailto:#">hujian2009@gamil.com</a>.</p>
+	        <p>powered by <a href="http://twitter.github.com/bootstrap">bootstrap</a>, <a href="http://jquery.com/">jquery</a>, 
+	        	<a href="www.ruby-lang.org">ruby</a> 和 <a href="http://www.sinatrarb.com">sinatrarb</a> </p>
+	      </div>
+	    </footer>
+
+		<script type="text/javascript" src="../public/js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.js"></script>
+	</body>

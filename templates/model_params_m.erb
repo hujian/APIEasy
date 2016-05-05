@@ -1,0 +1,35 @@
+//  <%= @model_name %>.m
+//
+//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
+//  Copyright 2012 theotino. All rights reserved.
+
+#import "<%= @model_name -%>.h"
+
+@implementation <%= @model_name %>
+
+<% if nil != @global_parameters -%>
+<% @global_parameters.each do |param| -%>
+@synthesize <%= param[:name] %>;
+<% end -%>
+<% end -%>
+<% @properties.each do |param| -%>
+<% if param[:name] != 'pageIndex' && param[:name] != 'pageSize' -%>
+@synthesize <%= param[:name] -%>;
+<% end -%>
+<% end -%>
+
+- (void)dealloc {
+<% if nil != @global_parameters -%>
+<% @global_parameters.each do |param| -%>
+    self.<%= param[:name] %> = nil;
+<% end -%>
+<% end -%>
+<% @properties.each do |param| -%>
+<% if param[:name] != 'pageIndex' && param[:name] != 'pageSize' -%>
+    self.<%= param[:name] -%> = nil;
+<% end -%>
+<% end -%>
+    [super dealloc];
+}
+
+@end

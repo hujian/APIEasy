@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增项目</title>
+		<meta name="description" content="">
+	    <meta name="author" content="">
+
+		<link rel="stylesheet" href="../public/css/bootstrap.css">
+		<link rel="stylesheet" href="../public/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="../public/css/global.css">
+	</head>
+
+	<body>
+		<!-- navi bar
+		==================================================== -->
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+		        <a class="brand" href="#">UliAPI</a>
+	            <ul class="nav">
+		            <li><a href="./index.html">首页</a></li>
+		            <li class="active"><a href="./index.html">新增项目</a></li>
+	            </ul>
+	        </div>
+	      </div>
+	    </div>
+
+		<!-- sub header -->
+		<header class="subhead">
+			<div class="container">
+				<h1>新增一个项目</h1>
+			</div>
+		</header>
+
+	    <!-- body container -->
+	    <div class="container">
+			<div class="page-header">
+				<a href="./index.html">返回</a>
+			</div>
+
+			<form action="">
+				<!-- basic information	 -->
+				<legend>基本信息</legend>
+				<label for="">项目名称</label>
+				<input type="text" placeholder="必填">
+				<label for="">项目说明</label>
+				<input type="text" placeholder="选填">
+				<label for="">项目状态</label>
+				<select name="" id="">
+					<option value="">新建</option>
+					<option value="">创建中</option>
+					<option value="">完成</option>
+					<option value="">结束</option>
+				</select>
+				<!-- global interface parameters -->
+				<legend>全局参数</legend>
+				<table class="table" id="input_paramters_table">
+					<thead>
+						<tr>
+							<td>参数名称</td>
+							<td>输入值实例</td>
+							<td>说明</td>
+							<td>参数类型</td>
+							<td>
+								<a class="add_param_button"><i class="icon-plus"></i></a>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" placeholder="必填"></td>
+							<td><input type="text" placeholder="选填"></td>
+							<td><input type="text" class="input-xlarge" placeholder="选填"></td>
+							<td>string</td>
+							<td>
+								<a class="delete_param_button"><i class="icon-minus"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- server path -->
+				<legend>服务器地址</legend>
+				<label for="">正式服务器</label>
+				<input type="text" placeholder="选填">
+				<label for="">测试服务器</label>
+				<input type="text" placeholder="选填">
+				<label for="">伪数据服务器</label>
+				<input type="text" placeholder="选填">
+				<p><i class="icon-exclamation-sign"></i>必须以http://开头, 可以包含API路径</p>
+			</form>
+
+			<div class="row">
+				<div class="span4 offset4">
+					<a href="#cancel" class="btn btn-large interface-button">取消并返回</a>
+					<a href="#cancel" class="btn btn-large btn-success interface-button">提交项目</a>
+				</div>
+			</div>
+	    </div> <!-- body container -->
+
+	    <footer class="footer">
+	      <div class="container">
+	        <p class="pull-right"><a href="#">回到顶部</a></p>
+	        <p>UliAPI致力于移动互联网项目的API管理功能. create by <a href="mailto:#">hujian2009@gamil.com</a>.</p>
+	        <p>powered by <a href="http://twitter.github.com/bootstrap">bootstrap</a>, <a href="http://jquery.com/">jquery</a>, 
+	        	<a href="www.ruby-lang.org">ruby</a> 和 <a href="http://www.sinatrarb.com">sinatrarb</a> </p>
+	      </div>
+	    </footer>
+
+		<script type="text/javascript" src="../public/js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../public/js/global.js"></script>
+
+		<script type="text/javascript">
+			function getRowString(id) {
+				var str = "<tr id='" + id + "'>" +
+							  "<td><input type='text' placeholder='必填'></td>" + 
+							  "<td><input type='text' class='input-xlarge' placeholder='选填'></td>" + 
+							  "<td><input type='text' class='input-xlarge' placeholder='选填'></td>" + 
+							  "<td>string</td>" +
+							  "<td>" + 
+							  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
+							  "</td>" + 
+					      "</tr>";
+				return str;
+			}
+
+			$("#input_paramters_table td a").click(function(){
+				if ($(this).hasClass("add_param_button")) {
+					var table = $("#input_paramters_table");
+					addTableRow(table, getRowString);
+				} else if ($(this).hasClass("delete_param_button")) {
+					deleteTableRow($(this).parent().parent());
+				}
+			});
+		</script>
+	</body>
+</html>

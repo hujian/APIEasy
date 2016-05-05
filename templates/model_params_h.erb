@@ -1,0 +1,21 @@
+//  <%= @model_name %>.h
+//
+//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
+//  Copyright 2012 theotino. All rights reserved.
+
+#import "TNParametersModel.h"
+
+@interface <%= @model_name %> : TNParametersModel
+
+<% if nil != @global_parameters -%>
+<% @global_parameters.each do |param| -%>
+@property (nonatomic, retain) NSString *<%= param.name %>;
+<% end -%>
+<% end -%>
+<% @properties.each do |param| -%>
+<% if param[:name] != 'pageIndex' && param[:name] != 'pageSize' -%>
+@property (nonatomic, retain) NSString *<%= param[:name] -%>;
+<% end -%>
+<% end -%>
+
+@end

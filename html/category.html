@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>类别列表</title>
+		<meta name="description" content="">
+	    <meta name="author" content="">
+
+		<link rel="stylesheet" href="../public/css/bootstrap.css">
+		<link rel="stylesheet" href="../public/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="../public/css/global.css">
+	</head>
+
+	<body>
+		<!-- navi bar
+		==================================================== -->
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+		        <a class="brand" href="#">UliAPI</a>
+	            <ul class="nav">
+		            <li><a href="./index.html">首页</a></li>
+		            <li><a href="./project.html">测试项目1</a></li>
+		            <li class="active"><a href="#">类别列表</a></li>
+	            </ul>
+	        </div>
+	      </div>
+	    </div>
+
+		<!-- sub header -->
+		<header class="subhead homepage-subhead">
+			<div class="container">
+				<h1>测试项目1</h1>
+				<p class="lead">类别列表</p>
+			</div>
+		</header>
+
+	    <!-- body container -->
+	    <div class="container">
+	    	<div class="page-header">
+	    		<p class="lead">所有接口类别</p>
+	    	</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<td>类别名称</td>
+						<td>说明</td>
+						<td>
+							<a class="add_param_button"><i class="icon-plus"></i></a>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="0">
+						<td><input type="text" placeholder="必填"></td>
+						<td><input type="text" class="input-xlarge" placeholder="选填"></td>
+						<td>
+							<a class="delete_param_button"><i class="icon-minus"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="row">
+				<div class="span4 offset4">
+					<a href="#cancel" class="btn btn-large interface-button">取消并返回</a>
+					<a href="#submit" class="btn btn-large btn-success interface-button">提交接口</a>
+				</div>
+			</div>
+	    </div> <!-- body container -->
+
+	    <footer class="footer">
+	      <div class="container">
+	        <p class="pull-right"><a href="#">回到顶部</a></p>
+	        <p>UliAPI致力于移动互联网项目的API管理功能. create by <a href="mailto:#">hujian2009@gamil.com</a>.</p>
+	        <p>powered by <a href="http://twitter.github.com/bootstrap">bootstrap</a>, <a href="http://jquery.com/">jquery</a>, 
+	        	<a href="www.ruby-lang.org">ruby</a> 和 <a href="http://www.sinatrarb.com">sinatrarb</a> </p>
+	      </div>
+	    </footer>
+
+		<script type="text/javascript" src="../public/js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../public/js/global.js"></script>
+
+		<script type="text/javascript">
+			function getRowString(id) {
+				var str = "<tr id='" + id + "'>" +
+							  "<td><input type='text' placeholder='必填'></td>" + 
+							  "<td><input type='text' class='input-xlarge' placeholder='选填'></td>" + 
+							  "<td>" + 
+							  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
+							  "</td>" + 
+					      "</tr>";
+				return str;
+			}
+
+			$("table td a").click(function(){
+				if ($(this).hasClass("add_param_button")) {
+					var table = $("table")
+					addTableRow(table, getRowString);
+				} else if ($(this).hasClass("delete_param_button")) {
+					deleteTableRow($(this).parent().parent());
+				}
+			});
+		</script>
+	</body>
+</html>

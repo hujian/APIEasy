@@ -1,0 +1,235 @@
+<!-- sub header -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li> <a href="/">项目列表</a> <span class="divider">/</span> </li>
+            <li><a href="/project/<%= project.id %>"><%= project.name %></a><span class="divider">/</span></li>
+            <li><a href="/project/<%= project.id %>/interface/all">接口列表</a><span class="divider">/</span></li>
+            <li><a class="active"href="/project/<%= project.id %>/interface/<%= interface.id %>">
+            	接口详情<span class="label label-info"><%= interface.name %></span>
+            </a></li>
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<div class="row">
+
+		<!-- doc navi -->
+		<div class="span3">
+			<% unless nil == categories || categories.empty? %>
+				<% categories.each do |category| %>
+					<ul class="nav nav-list">
+						<li class="nav-header"><%= category[0].category %></li>
+						<% category.each do |interface| %>
+							<li>
+								<div class="row-fluid" style="padding-top:5px">
+									<div class="offset1">
+										<a id="interface_<%= interface.id %>" href="/project/<%= project.id %>/interface/<%= interface.id %>">
+											<p><%= interface.name %></p> 
+										</a>
+									</div>
+									
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				<% end %>
+			<% else %>
+			<% end %>
+		</div>
+
+		<div class="span9">
+			<section id="overview">
+    			<div class="page-header">
+    				<h1><%= interface.name %></h1>
+    				<!-- 接口操作按钮 -->
+    				<a href="/project/<%= project.id %>/interface/<%= interface.id %>/ios" class="btn btn-primary btn-small">下载iOS接口</a>
+    				<a href="/project/<%= project.id %>/interface/<%= interface.id %>/edit" class="btn btn-primary btn-small">编辑接口</a>
+    				<a href="#myModal" class="btn btn-danger btn-small" role="button" data-toggle="modal">删除接口</a>
+				    <!-- 接口删除提醒模态框 -->
+				    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">接口删除确认</h3>
+						</div>
+						<div class="modal-body">
+							<p>一旦删除该接口，就无法恢复!</p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+							<button class="btn btn-danger" id="delete-comfirm">删除</button>
+						</div>
+					</div>
+    			</div>
+
+				<p class="lead">接口描述</p>
+
+				<table class="table table-bordered table-striped center-header">
+					<tbody>
+						<tr>
+							<td>接口类型</td>
+							<td><%= interface.http_type %></td>
+						</tr>
+						<tr>
+							<td>接口说明</td>
+							<td><%= interface.detail %></td>
+						</tr>
+						<tr>
+							<td>正式服务器接口地址</td>
+							<td><%= path_product %></td>
+						</tr>
+						<tr>
+							<td>测试服务器接口地址</td>
+							<td><%= path_develop %></td>
+						</tr>
+						<tr>
+							<td>伪数据地址</td>
+							<td><%= path_fake %></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="input">
+				<p class="lead">输入参数</p>
+				<table class="table table-bordered table-striped center-header">
+					<thead>
+						<tr>
+							<td>参数名称</td>
+							<td>参数类型</td>
+							<td>输入值实例</td>
+							<td>说明</td>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 全局参数 -->
+						<% unless nil == global_parameters || global_parameters.empty? %>
+							<% global_parameters.each do |param| %>
+								<tr>
+									<td><%= param.name %></td>
+									<td>string</td>
+									<td><%= param.sample %></td>
+									<td><%= param.detail %></td>
+								</tr>
+							<% end %>
+						<% end %>
+						<!-- 其他输入参数 -->
+						<% unless nil == input_params || input_params.empty? %>
+							<% input_params.each do |param| %>
+								<tr>
+									<td><%= param.name %></td>
+									<td>string</td>
+									<td><%= param.sample %></td>
+									<td><%= param.detail %></td>
+								</tr>
+							<% end %>
+						<% end %>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="output-success">
+				<legend>请求成功时输出数据</legend>
+					<!-- 成功时返回值伪数据  -->
+				<p style="margin-top:30px">
+					<i class="icon-ok"></i>示例:
+				</p>
+				<pre class="code-pre" ><%= interface.output_success_sample %></pre>
+
+					<!-- 参数说明 -->
+				<p style="margin-top:30px">
+					<i class="icon-ok"></i>参数说明:
+				</p>
+				<table class="table table-striped table-bordered center-header">
+					<thead>
+						<tr>
+							<td>参数路径</td>
+							<td>参数类型</td>
+							<td>输出值实例</td>
+							<td>说明</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% unless nil == out_success_params || out_success_params.empty? %>
+							<% out_success_params.each do |param| %>
+								<tr>
+									<td><%= param.name %></td>
+									<td><%= param.data_type %></td>
+									<td><%= param.sample %></td>
+									<td><%= param.detail %></td>
+								</tr>
+							<% end %>
+						<% end %>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="output-fail">
+				<legend>请求失败时输出数据</legend>
+					<!-- 成功时返回值伪数据  -->
+				<p style="margin-top:30px">
+					<i class="icon-ok"></i>示例:
+				</p>
+				<pre class="code-pre"><%= interface.output_fail_sample %></pre>
+
+					<!-- 参数说明 -->
+				<p style="margin-top:30px">
+					<i class="icon-ok"></i>参数说明:
+				</p>
+				<table class="table table-striped table-bordered center-header">
+					<thead>
+						<tr>
+							<td>参数路径</td>
+							<td>参数类型</td>
+							<td>输出值实例</td>
+							<td>说明</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% unless nil == out_fail_params || out_fail_params.empty? %>
+							<% out_fail_params.each do |param| %>
+								<tr>
+									<td><%= param.name %></td>
+									<td><%= param.data_type %></td>
+									<td><%= param.sample %></td>
+									<td><%= param.detail %></td>
+								</tr>
+							<% end %>
+						<% end %>
+					</tbody>
+				</table>
+			</section>
+			<section id="generator">
+				<p class="lead">代码生成</p>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td>model名称</td>
+							<td><%= interface.model_name %></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+		</div> <!-- span9 -->
+	</div> <!-- row -->
+</div> <!-- body container -->
+
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 使右边栏中当前项显示高亮
+		$("#interface_<%= interface.id %>").closest("div.row-fluid").addClass("active")
+
+		// 输出的json数据显示高亮
+	    $("pre").addClass("prettyprint");
+	    prettyPrint();
+
+		$("#delete-comfirm").click(function() {
+			window.location.replace("/project/<%= project.id %>/interface/<%= interface.id %>/delete")
+		})
+	})
+</script>

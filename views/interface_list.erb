@@ -1,0 +1,37 @@
+<!-- sub header -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li><a href="/">项目列表</a> <span class="divider">/</span> </li>
+            <li><a href="/project/<%= @project.id %>"><%= @project.name %></a><span class="divider">/</span></li>
+            <li><a class="active" href="/project/<%= @project.id %>/interface/all">接口列表</a><span class="divider">/</span></li>
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<a href="/project/<%= @project.id %>/interface/create" class="btn" style="margin-top:20px">新增接口</a>
+	<% unless nil == @categories || @categories.empty? %>
+		<table class="table table-bordered" style="margin-top:20px">
+			<% @categories.each do |interfaces| %>
+				<tr class="info"><td><%= interfaces[0].category %></td></tr>
+				<% interfaces.each do |interface| %>
+					<tr>
+						<td>
+							<p class="interface-info">
+								<a href="/project/<%= @project.id %>/interface/<%= interface.id %>">
+									<%= interface.name %>
+								</a>
+							</p>
+							<p class="interface-subinfo">
+								<i class="icon-time"> </i>
+								更新时间: <%= interface.update_at.strftime("%Y-%m-%d %H:%M:%S") %>
+							</p>
+						</td>
+					</tr>
+				<% end %>
+			<% end %>
+		</table>
+	<% end %>
+</div>
