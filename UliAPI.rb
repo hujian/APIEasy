@@ -17,7 +17,7 @@ if ENV['ULIAPI_DB_URL'] || ENV['DATABASE_URL'] # heroku and mysql
 	set :environment, :production
 end
 set :port, 4567
-set :bind, '127.0.0.1'
+set :bind, '0.0.0.0'
 
 # data_mapper init
 # --------------------------------------------------------------------------------------------
