@@ -33,14 +33,17 @@ else # sqlite for develop
 	DataMapper.setup(:default, "sqlite://#{Dir.pwd}/models/db.sqlite")
 end
 
-# set string max length to 255
+# set string max length to 512
 DataMapper::Property::String.length(512)
 
 # requre all db file
 Dir["./models/*.rb"].each {|file| require file}
 
+# his checks the models for validity and initializes all properties associated with relationships.
 DataMapper.finalize
 
+# This tries to make the schema match the model. It won't change any existing columns.
+DataMapper.auto_upgrade!
 
 # hepler for user content
 # --------------------------------------------------------------------------------------------
@@ -49,13 +52,12 @@ helpers do
     alias_method :escape, :escape_html  
 end 
 
-
-
 # url map
 # --------------------------------------------------------------------------------------------
 # 首页
 # ------------------------------------------------
 get '/' do
+
 	@projects = Project.all(:order => [:created_at.desc]) 
 
 	erb :index
