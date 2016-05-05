@@ -2,7 +2,7 @@
 
 require 'erb'
 require 'nestful'
-# require 'zip/zip'
+require 'zip'
 require 'find'
 
 # 生成规则如下：
@@ -188,7 +188,7 @@ class IOSFactory
             interface_id = @interface.id
             zip_file_name = "interface_#{interface_id}.zip"
             zip_file_path = "#{@saving_dir}/#{zip_file_name}" 
-            Zip::ZipFile.open(zip_file_path, Zip::ZipFile::CREATE) do |zipfile|
+            Zip::File.open(zip_file_path, Zip::File::CREATE) do |zipfile|
                 Find.find(@saving_dir) do |path|
                     if File.file?(path)
                         zipfile.add(File.basename(path), path)

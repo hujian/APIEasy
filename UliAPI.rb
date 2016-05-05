@@ -16,8 +16,8 @@ Dir["./controllers/*.rb"].each {|file| require file}
 if ENV['ULIAPI_DB_URL'] || ENV['DATABASE_URL'] # heroku and mysql
 	set :environment, :production
 end
-set :port, 4568
-# set :bind, '127.0.0.1'
+set :port, 4567
+set :bind, '127.0.0.1'
 
 # data_mapper init
 # --------------------------------------------------------------------------------------------
