@@ -1,15 +1,12 @@
 # coding = utf-8
-
-# require
-# --------------------------------------------------------------------------------------------
+require 'rubygems'
+require 'bundler/setup'
 require 'sinatra'
 require 'erb'
 require 'data_mapper'
 require 'cgi'
 require 'logger'
-# require all controllers
 Dir["./controllers/*.rb"].each {|file| require file}
-
 
 # 工程设置
 # --------------------------------------------------------------------------------------------
@@ -47,10 +44,10 @@ DataMapper.auto_upgrade!
 
 # hepler for user content
 # --------------------------------------------------------------------------------------------
-helpers do  
-    include Rack::Utils  
-    alias_method :escape, :escape_html  
-end 
+helpers do
+    include Rack::Utils
+    alias_method :escape, :escape_html
+end
 
 # url map
 # --------------------------------------------------------------------------------------------
@@ -58,7 +55,7 @@ end
 # ------------------------------------------------
 get '/' do
 
-	@projects = Project.all(:order => [:created_at.desc]) 
+	@projects = Project.all(:order => [:created_at.desc])
 
 	erb :index
 end
@@ -92,7 +89,7 @@ end
 # 删除项目
 # ------------------------------------------------
 get "/project/:id/delete" do
-	project = Project.get(params[:id]) 
+	project = Project.get(params[:id])
 	project.destroy_all
 
 	redirect '/'
@@ -244,4 +241,3 @@ end
 
 # 	erb :online_test, :locals => info
 # end
-
