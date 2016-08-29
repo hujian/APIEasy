@@ -1,0 +1,10 @@
+[ 2016-08-28 13:12:34.5698 42025/0x7fff771bc000 age/Wat/WatchdogMain.cpp:1291 ]: Starting Passenger watchdog...
+[ 2016-08-28 13:12:34.5840 42027/0x7fff771bc000 age/Cor/CoreMain.cpp:982 ]: Starting Passenger core...
+[ 2016-08-28 13:12:34.5845 42027/0x7fff771bc000 age/Cor/CoreMain.cpp:235 ]: Passenger core running in multi-application mode.
+[ 2016-08-28 13:12:34.5903 42027/0x7fff771bc000 age/Cor/CoreMain.cpp:732 ]: Passenger core online, PID 42027
+[ 2016-08-28 13:12:34.5941 42029/0x7fff771bc000 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2016-08-28 13:12:34.5948 42029/0x7fff771bc000 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 42029
+App 42049 stdout: 
+App 42072 stdout: 
+App 42049 stderr: 127.0.0.1 - - [28/Aug/2016 13:13:31] "GET / HTTP/1.1" 200 2404 0.0043
+App 42049 stderr: 127.0.0.1 - - [28/Aug/2016 13:13:32] "GET /favicon.ico HTTP/1.1" 404 447 0.0009
