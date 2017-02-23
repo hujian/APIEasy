@@ -74,7 +74,7 @@
 					<tr>
 						<td><%= param.name %></td>
 						<td>string</td>
-						<td><%= param.sample %></td>
+						<td class='table-sample'><%= param.sample %></td>
 						<td><%= param.detail %></td>
 					</tr>
 				<% end %>
@@ -116,6 +116,6 @@
 	$(document).ready(function() {
 		$("#confirm_delete_button").click(function() {
 			window.location.replace("/project/<%= @project.id %>/delete")
-		}) 
+		})
 	})
 </script>

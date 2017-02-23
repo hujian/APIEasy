@@ -50,7 +50,7 @@
 					<% end %>
 			    </ul>
 		    </div>
-	    </div>	
+	    </div>
 
 		<label for="">接口说明</label>
 		<input type="text" placeholder="选填" name="detail" value="<%= @interface == nil ? '' : @interface.detail %>">
@@ -112,7 +112,7 @@
 			<!-- refresh data -->
 		<p> <i class="icon-globe"></i>输入实例:</p>
 		<div>
-			<input type="text" style="margin-top:9px" class="span4", name="success_test_url"> 
+			<input type="text" style="margin-top:9px" class="span4", name="success_test_url">
 			<a class="btn" id="refresh-input-params-button"><i class="icon-refresh inside"></i></a>
 		</div>
 		<table class="table" id="input_params_table">
@@ -161,14 +161,14 @@
 				<!-- refresh data -->
 			<p> <i class="icon-ok"></i>在线获取数据:</p>
 			<div>
-				<input type="text" style="margin-top:9px" class="span4", name="success_test_url" value="<%= @interface == nil ? '' : @interface.success_test_url %>"> 
+				<input type="text" style="margin-top:9px" class="span4", name="success_test_url" value="<%= @interface == nil ? '' : @interface.success_test_url %>">
 				<a class="btn refresh-output-button"><i class="icon-refresh inside"></i></a>
 			</div>
 
 			<p style="margin-top:30px">
 				<!-- 成功时返回值伪数据  -->
 				<i class="icon-ok"></i>示例:
-				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a> 
+				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a>
 			</p>
 			<textarea name="intertace_output_success_sample" rows="40" class="lined"><%= @interface == nil ? '' : @interface.output_success_sample %>
 			</textarea>
@@ -176,7 +176,7 @@
 				<!-- 参数说明 -->
 			<p style="margin-top:30px">
 				<i class="icon-ok"></i>参数说明:
-				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a> 
+				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a>
 			</p>
 			<table class="table output-success-table">
 				<thead>
@@ -226,14 +226,14 @@
 				<!-- refresh data -->
 			<p> <i class="icon-remove"></i>在线获取数据:</p>
 			<div>
-				<input type="text" style="margin-top:9px" class="span4" name="fail_test_url" value="<%= @interface == nil ? '' : @interface.fail_test_url %>"> 
+				<input type="text" style="margin-top:9px" class="span4" name="fail_test_url" value="<%= @interface == nil ? '' : @interface.fail_test_url %>">
 				<a class="btn refresh-output-button"><i class="icon-refresh inside"></i></a>
 			</div>
 
 			<p style="margin-top:30px">
 				<!-- 成功时返回值伪数据  -->
 				<i class="icon-remove"></i>示例:
-				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a> 
+				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a>
 			</p>
 			<textarea name="interface_output_fail_sample" rows="25" class="lined"><%= @interface == nil ? '' : @interface.output_fail_sample %>
 			</textarea>
@@ -241,7 +241,7 @@
 				<!-- 参数说明 -->
 			<p style="margin-top:30px">
 				<i class="icon-remove"></i>参数说明:
-				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a> 
+				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a>
 			</p>
 			<table class="table output-fail-table">
 				<thead>
@@ -295,25 +295,25 @@
 		// 获取输出参数row string
 		function getOutputSuccessParamRowString(id) {
 			var str = "<tr id='" + id + "'>" +
-						  "<td><input type='text' placeholder='必填' name='output_success_name[]'></td>" + 
-						  "<td><input type='text' placeholder='选填' name='output_success_sample[]'></td>" + 
-						  "<td><input type='text' placeholder='选填' name='output_success_detail[]'></td>" + 
+						  "<td><input type='text' placeholder='必填' name='output_success_name[]'></td>" +
+						  "<td><input type='text' placeholder='选填' name='output_success_sample[]'></td>" +
+						  "<td><input type='text' placeholder='选填' name='output_success_detail[]'></td>" +
 						  "<td><input type='text' placeholder='选填' name='output_success_type[]'></td>" +
-						  "<td>" + 
-						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
-						  "</td>" + 
+						  "<td>" +
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" +
+						  "</td>" +
 				      "</tr>";
 			return str;
 		}
 		function getOutputFailParamRowString(id) {
 			var str = "<tr id='" + id + "'>" +
-						  "<td><input type='text' placeholder='必填' name='output_fail_name[]'></td>" + 
-						  "<td><input type='text' placeholder='选填' name='output_fail_sample[]'></td>" + 
-						  "<td><input type='text' placeholder='选填' name='output_fail_detail[]'></td>" + 
+						  "<td><input type='text' placeholder='必填' name='output_fail_name[]'></td>" +
+						  "<td><input type='text' placeholder='选填' name='output_fail_sample[]'></td>" +
+						  "<td><input type='text' placeholder='选填' name='output_fail_detail[]'></td>" +
 						  "<td><input type='text' placeholder='选填' name='output_fail_type[]'></td>" +
-						  "<td>" + 
-						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
-						  "</td>" + 
+						  "<td>" +
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" +
+						  "</td>" +
 				      "</tr>";
 			return str;
 		}
@@ -321,11 +321,11 @@
 		// 获取代码生成映射表row string
 		function getMapRowString(id) {
 			var str = "<tr id='" + id + "'>" +
-						  "<td><input type='text' placeholder='必填' name='orgin_key[]'></td>" + 
-						  "<td><input type='text' placeholder='选填' name='new_key[]'></td>" + 
-						  "<td>" + 
-						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
-						  "</td>" + 
+						  "<td><input type='text' placeholder='必填' name='orgin_key[]'></td>" +
+						  "<td><input type='text' placeholder='选填' name='new_key[]'></td>" +
+						  "<td>" +
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" +
+						  "</td>" +
 				      "</tr>";
 			return str;
 		}
@@ -420,19 +420,24 @@
 			var url = $(this).prev("input").val();
 
 			params = paramsFromURL(url);
-			if (Object.size(params) > 0) {
-				var table = $("#input_params_table");
-				// remove old params
-				table.find("tbody tr").each(function() {
-					$(this).remove();
-				})
-				// add new ones
-				for (name in params) {
-					var row = addTableRow(table, getInputParamRowString);
-					row.find("td:first input").val(name);
-					row.find("td:eq(1) input").val(params[name]);
+			encode_string = params['params']
+			$.get('/d', {'e': encode_string}, function(data, status) {
+				params = $.parseJSON(data);
+
+				if (Object.size(params) > 0) {
+					var table = $("#input_params_table");
+					// remove old params
+					table.find("tbody tr").each(function() {
+						$(this).remove();
+					})
+					// add new ones
+					for (name in params) {
+						var row = addTableRow(table, getInputParamRowString);
+						row.find("td:first input").val(name);
+						row.find("td:eq(1) input").val(params[name]);
+					}
 				}
-			}
+			});
 		})
 
 		// 刷新output数据事件

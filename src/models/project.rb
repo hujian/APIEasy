@@ -56,15 +56,15 @@ class Project
 					)
 					self.global_parameters << param
 				end
-			end 
+			end
 			self.save
 		end
 	end
 
 	def update_all(params)
-		
+
 		self.update(
-			Project.basic_info_from_http_params(params)		
+			Project.basic_info_from_http_params(params)
 		)
 
 		# 保险起见，所有参数，全部新建
@@ -92,9 +92,8 @@ class GlobalParameter
 
 	property :id, Serial
 	property :name, String, :required => true
-	property :sample, String
-	property :detail, Text
+	property :sample, Text, :length => 500000 
+	property :detail, Text, :length => 500000
 
 	belongs_to :project
 end
-

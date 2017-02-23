@@ -1,38 +1,17 @@
-//  <%= @model_name %>.h
-//
-//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
-//  Copyright 2012 theotino. All rights reserved.
+/*
+ * @brief:  <%= @interface.name%>
+ * @author: APIEASY
+ * @date:   <%= Time.new().strftime('%Y-%m-%d')%>
+ */
 
-#import "TNHttpModel.h"
-
-<% @import_properties.each do |property| -%>
-#import "<%= property %>.h"
-<% end -%>
+#import <Foundation/Foundation.h>
+#import "XQRequest.h"
 #import "<%= @model_name %>Parameter.h"
 
-@interface <%= @model_name %> : TNHttpModel
+@interface <%= @model_name %> : XQRequest
 
-/*
-* 接口传入参数
-*/
-@property (nonatomic, retain) <%= @model_name %>Parameter* parameters;
+- (id)initWithParam:(<%= @model_name %>Parameter*)param;
 
-/*
-* 返回结果集
-*/
-<% @properties.each do |property| -%>
-@property (nonatomic, <%= property[:memory_type] %>) <%= property[:type] %> <%= property[:name] -%>;
-<% end -%>
-
-/*
-* @brief 获取model数据
-*
-* @param completionBlock 获取成功后回调的block
-*
-* @param failedBlock 失败后回调的block, 返回NSError。注意无数据也返回错误(no data).
-*
-*/
-- (void)getDataWithCompletionBlock:(HttpModelCompletionBlock)completionBlock
-                       failedBlock:(HttpModelFailedBlock)failedBlock;
+@property (nonatomic, strong) <%= @model_name %>Parameter* param;
 
 @end

@@ -27,10 +27,16 @@ textarea {
 
 .table td {
   min-width: 150px;
+  word-wrap: break-word;
+}
+
+.table-sample {
+	width: 300px;
+	word-break: break-all;
 }
 
 div.btn-group {
-   display:inline-block; 
+   display:inline-block;
    margin-left:-1px
 }
 
@@ -55,7 +61,7 @@ div.navi-breadcrumb span.label {
   margin-left: 8px;
 }
 
-/*interface 
+/*interface
 -------------------------------------------------- */
 pre.code-pre {
   max-height:1200px;

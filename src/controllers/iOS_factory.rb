@@ -1,5 +1,6 @@
 # coding = utf-8
 
+require 'rubygems'
 require 'erb'
 require 'nestful'
 require 'zip'
@@ -187,15 +188,16 @@ class IOSFactory
         if @saving_dir != nil and not @saving_dir.empty?
             interface_id = @interface.id
             zip_file_name = "interface_#{interface_id}.zip"
-            zip_file_path = "#{@saving_dir}/#{zip_file_name}" 
-            Zip::File.open(zip_file_path, Zip::File::CREATE) do |zipfile|
+            zip_file_path = "#{@saving_dir}/#{zip_file_name}"
+
+            Zip::File.open(zip_file_path, Zip::File::CREATE) do |zip_file|
                 Find.find(@saving_dir) do |path|
                     if File.file?(path)
-                        zipfile.add(File.basename(path), path)
+                        zip_file.add(File.basename(path), path)
                     end
                 end
             end
-            return "#{@model_download_url}/interface_#{@interface.id}/#{zip_file_name}" 
+            return "#{@model_download_url}/interface_#{@interface.id}/#{zip_file_name}"
         else
             return ''
         end

@@ -1,63 +1,27 @@
-//  <%= @model_name %>.m
-//
-//  Created by CodeMan on <%= Time.new().strftime('%Y-%m-%d')%>
-//  Copyright 2012 theotino. All rights reserved.
-
 #import "<%= @model_name %>.h"
 
 @implementation <%= @model_name %>
 
-@synthesize parameters;
-<% @properties.each do |property| -%>
-@synthesize <%= property[:name] -%>;
-<% end -%>
-
-- (id)init {
+- (id)initWithParam:(<%= @model_name %>Parameter*)param {
   self = [super init];
+
   if (nil != self) {
-<% if not @interface.path_product.empty? -%>
-    self.path = @"<%= @interface.path_product %>";
-<% end -%>
-<% if not @interface.http_type.empty? -%>
-    self.method = @"<%= @interface.http_type.upcase -%>";
-<% end -%>
-    self.httpClientName = @"default";
-    self.parameters = [[[<%= @model_name %>Parameter alloc] init] autorelease];
-<% if nil != @global_parameters -%>
-<% @global_parameters.each do |param| -%>
-    self.parameters.<%= param.name %> = @"<%= param.sample -%>";
-<% end -%>
-<% end -%>
-    self.needSignatureRequest = YES;
+      self.param = param;
   }
 
   return self;
 }
 
-- (void)dealloc {
-  self.parameters = nil;
-<% @nilable_properties.each do |property| -%>
-  self.<%= property[:name] -%> = nil;
-<% end -%>
-  [super dealloc];
+- (NSString *)requestUrl {
+    return @"<%= @interface.path_develop %>";
 }
 
-- (void)getDataWithCompletionBlock:(HttpModelCompletionBlock)completionBlock
-                       failedBlock:(HttpModelFailedBlock)failedBlock {
-
-  [self getDataWithParameters:self.parameters completionBlock:completionBlock failedBlock:failedBlock];
-}
-
-- (void)parseData:(NSDictionary *)data {
-  NSDictionary *map = [NSDictionary dictionaryWithObjectsAndKeys:
-<% if nil != @model_file_name_map and not @model_file_name_map.empty?  -%>
-<% @model_file_name_map.each do |origin_key, new_key| -%>
-                                    @"<%= new_key %>", @"<%= origin_key %>", 
-<% end -%>
-<% end -%>
-                                    nil];
-
-  [self setModelFromDictionary:data keyMap:map];
+- (YTKRequestMethod)requestMethod {
+    <% if @interface.http_type == 'GET' %>
+    return YTKRequestMethodGET;
+    <% else %>
+    return YTKRequestMethodPOST;
+    <% end %>
 }
 
 @end

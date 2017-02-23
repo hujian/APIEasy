@@ -4,7 +4,8 @@ gem 'sinatra'
 gem 'data_mapper'
 gem 'nestful'
 gem 'dm-sqlite-adapter'
-gem 'zip'
+gem 'rubyzip', '>= 1.0.0' # will load new rubyzip version
+gem 'zip-zip' # will load compatibility for old rubyzip API.
 gem 'yajl-ruby'
 gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 

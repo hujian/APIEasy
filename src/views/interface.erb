@@ -27,10 +27,10 @@
 								<div class="row-fluid" style="padding-top:5px">
 									<div class="offset1">
 										<a id="interface_<%= interface.id %>" href="/project/<%= project.id %>/interface/<%= interface.id %>">
-											<p><%= interface.name %></p> 
+											<p><%= interface.name %></p>
 										</a>
 									</div>
-									
+
 								</div>
 							</li>
 						<% end %>
@@ -110,7 +110,7 @@
 								<tr>
 									<td><%= param.name %></td>
 									<td>string</td>
-									<td><%= param.sample %></td>
+									<td class='table-sample'><%= param.sample %></td>
 									<td><%= param.detail %></td>
 								</tr>
 							<% end %>
@@ -121,7 +121,7 @@
 								<tr>
 									<td><%= param.name %></td>
 									<td>string</td>
-									<td><%= param.sample %></td>
+									<td class='table-sample'><%= param.sample %></td>
 									<td><%= param.detail %></td>
 								</tr>
 							<% end %>
@@ -157,7 +157,7 @@
 								<tr>
 									<td><%= param.name %></td>
 									<td><%= param.data_type %></td>
-									<td><%= param.sample %></td>
+									<td class='table-sample'><%= param.sample %></td>
 									<td><%= param.detail %></td>
 								</tr>
 							<% end %>
@@ -193,7 +193,7 @@
 								<tr>
 									<td><%= param.name %></td>
 									<td><%= param.data_type %></td>
-									<td><%= param.sample %></td>
+									<td class='table-sample'><%= param.sample %></td>
 									<td><%= param.detail %></td>
 								</tr>
 							<% end %>

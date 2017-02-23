@@ -18,8 +18,8 @@ class Interface
 	property :update_at, DateTime
 	property :output_success_sample, Text, :length => 500000
 	property :output_fail_sample, Text
-	property :success_test_url, String
-	property :fail_test_url, String
+	property :success_test_url, Text
+	property :fail_test_url, Text
 
 	belongs_to :project
 	has n, :interface_parameters
@@ -49,7 +49,7 @@ class Interface
 		index_pairs = {}
 		array.each do |object|
 			value = object[key]
-			if nil == index_pairs[value] 
+			if nil == index_pairs[value]
 				index_pairs[value] = [object]
 
 				# 查看接口详情
@@ -75,7 +75,7 @@ class Interface
 			:output_success_sample => params[:intertace_output_success_sample],
 			:output_fail_sample => params[:interface_output_fail_sample],
 			:success_test_url => params[:success_test_url],
-			:fail_test_url => params[:fail_test_url],
+			:fail_test_url => params[:fail_test_url]
 		}
 	end
 
@@ -105,7 +105,7 @@ class Interface
 					)
 					array << param
 				end
-			end	
+			end
 		end
 	end
 
@@ -134,17 +134,21 @@ class Interface
 		}
 	end
 
-	# 获取完整路径 
-	def full_url(host, path, params) 
+	# 获取完整路径
+	def full_url(host, path, params)
 		result = ''
-		if not path.start_with? 'http://' and host.start_with? 'http://'
-				result =  URI.join(host, path)
-		else
-			result = URI(path)
+
+		if path
+			if not path.start_with? 'http://' and host.start_with? 'http://'
+				result = URI.join(host, path)
+			else
+				result = URI(path)
+			end
 		end
-		if not params.empty?
-			result.query = URI.encode_www_form(params)
-		end
+
+		# if not params.empty?
+		# 	result.query = URI.encode_www_form(params)
+		# end
 
 		return result.to_s
 	end
@@ -158,10 +162,13 @@ class Interface
 
 		project = Project.get(self.project_id)
 
-		if not self.path_fake.start_with? '/'
+		if self.path_fake and not self.path_fake.start_with? '/'
 			self.path_fake = '/' + self.path_fake
 		end
-		self.path_fake = "/fake_data/#{self.id}" + self.path_fake
+
+		if self.path_fake
+			self.path_fake = "/fake_data/#{self.id.to_s}" + self.path_fake
+		end
 
 		return {
 			:path_product => self.full_url(project[:host_product], self.path_product, params),
@@ -194,6 +201,7 @@ class Interface
 		map = Hash[ InterfaceParameterMap.all(:interface_id => self.id).map {|d| [d.orgin_key, d.new_key]} ]
 		interface_data = factory.parse_json_string_to_dictionary(self.output_success_sample)
 		factory.create_interface_model(interface_data, self.model_name, map, self)
+
 		# 生成参数文件
 		params = Hash[ InterfaceParameter.all(:interface_id => self.id, :type => 'input').map {|p| [p.name, p.sample]} ]
 		factory.create_input_param_model(params, "#{self.model_name}Parameter")
@@ -208,8 +216,8 @@ class InterfaceParameter
 
 	property :id, Serial
 	property :name, String
-	property :sample, String
-	property :detail, Text
+	property :sample, Text, :length => 500000
+	property :detail, Text, :length => 500000
 	property :type, String      #接口分类类型
 	property :data_type, String #数据类型
 
